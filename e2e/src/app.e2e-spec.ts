@@ -1,16 +1,21 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
+describe('US1234 When a User navigates to the homepage', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('TIX-1234 they should see Justin on the main message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('angular-tour-of-heroes app is running!');
+    expect(page.getTitleText()).toContain('Justin');
+  });
+
+  it('TIX-1235 they should see Mamie on the main message', () => {
+    page.navigateTo();
+    expect(page.getTitleText()).toContain('Mamie');
   });
 
   afterEach(async () => {
